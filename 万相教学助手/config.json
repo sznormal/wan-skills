@@ -1,0 +1,193 @@
+{
+  "name": "万相教学助手",
+  "version": "1.0.0",
+  "description": "知识点动态可视化工具 - 专为教师设计的教学视频生成器",
+  "author": "Normal老师",
+  "competition": "万相妙思+快闪赛",
+  "theme": "万相皆可Skill",
+  
+  "api": {
+    "base_url": "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation",
+    "models": {
+      "text_to_image": "wan2.7-image-pro",
+      "text_to_video": "wan2.7-t2v",
+      "image_to_video": "wan2.7-i2v",
+      "reference_to_video": "wan2.7-r2v"
+    },
+    "timeout": 120,
+    "max_retries": 3
+  },
+  
+  "video_settings": {
+    "default_duration": 5,
+    "max_duration": 10,
+    "min_duration": 5,
+    "resolutions": {
+      "720p": "1280x720",
+      "1080p": "1920x1080",
+      "4k": "3840x2160"
+    },
+    "default_resolution": "1280x720",
+    "fps": 24
+  },
+  
+  "image_settings": {
+    "default_resolution": "1024x1024",
+    "resolutions": [
+      "512x512",
+      "768x768",
+      "1024x1024",
+      "1024x768",
+      "1536x1024"
+    ],
+    "quality": "high"
+  },
+  
+  "subjects": {
+    "生物": {
+      "keywords": ["细胞", "DNA", "光合作用", "呼吸作用", "进化", "生态"],
+      "style": "animation",
+      "color_scheme": "vibrant_green_blue"
+    },
+    "物理": {
+      "keywords": ["力", "运动", "能量", "电磁", "光学", "量子"],
+      "style": "tech_sci_fi",
+      "color_scheme": "blue_glow"
+    },
+    "化学": {
+      "keywords": ["反应", "分子", "原子", "元素", "周期表", "实验"],
+      "style": "tech_sci_fi",
+      "color_scheme": "scientific_neutral"
+    },
+    "历史": {
+      "keywords": ["朝代", "事件", "人物", "战争", "革命", "文明"],
+      "style": "historical",
+      "color_scheme": "warm_antique"
+    },
+    "地理": {
+      "keywords": ["地形", "气候", "地图", "资源", "人口", "环境"],
+      "style": "natural",
+      "color_scheme": "earth_tones"
+    },
+    "语文": {
+      "keywords": ["诗词", "文章", "人物", "情节", "修辞", "意境"],
+      "style": "artistic",
+      "color_scheme": "ink_wash"
+    },
+    "数学": {
+      "keywords": ["几何", "代数", "函数", "概率", "微积分", "证明"],
+      "style": "minimalist",
+      "color_scheme": "clean_white"
+    }
+  },
+  
+  "styles": {
+    "知识动画风": {
+      "description": "简洁扁平，适合概念讲解",
+      "prompt_suffix": "flat design, vector graphics, clean lines, modern educational animation",
+      "negative_prompt": "photorealistic, cluttered, complex background"
+    },
+    "科幻科技风": {
+      "description": "适合物理、化学",
+      "prompt_suffix": "futuristic technology style, holographic displays, sci-fi aesthetics, blue glow effects",
+      "negative_prompt": "retro, vintage, outdated technology"
+    },
+    "历史复古风": {
+      "description": "适合历史、文学",
+      "prompt_suffix": "period painting style, classical art techniques, warm nostalgic tones, museum quality",
+      "negative_prompt": "modern elements, cartoon style, contemporary design"
+    },
+    "自然写实风": {
+      "description": "适合生物、地理",
+      "prompt_suffix": "nature documentary style, realistic textures, environmental harmony, wildlife photography",
+      "negative_prompt": "artificial, synthetic, sterile environment"
+    },
+    "简约线条风": {
+      "description": "适合数学、抽象概念",
+      "prompt_suffix": "minimalist design, clean white background, simple geometric shapes, elegant typography",
+      "negative_prompt": "busy background, excessive details, cluttered composition"
+    },
+    "多彩插画风": {
+      "description": "适合小学、初中",
+      "prompt_suffix": "vibrant colors, playful illustration, friendly characters, engaging for young learners",
+      "negative_prompt": "dull colors, scary imagery, complex diagrams"
+    }
+  },
+  
+  "grade_levels": {
+    "小学": {
+      "complexity": "simple",
+      "colors": "bright_vibrant",
+      "characters": "cartoon_friendly"
+    },
+    "初中": {
+      "complexity": "moderate",
+      "colors": "balanced",
+      "characters": "illustrative"
+    },
+    "高中": {
+      "complexity": "detailed",
+      "colors": "scientific",
+      "characters": "professional"
+    },
+    "大学": {
+      "complexity": "advanced",
+      "colors": "technical",
+      "characters": "schematic"
+    }
+  },
+  
+  "storyboard_templates": {
+    "概念讲解": {
+      "description": "通用知识点讲解结构",
+      "scenes": [
+        {"name": "开场引入", "ratio": 0.15, "focus": "吸引注意"},
+        {"name": "概念定义", "ratio": 0.25, "focus": "核心知识"},
+        {"name": "案例展示", "ratio": 0.30, "focus": "应用举例"},
+        {"name": "要点总结", "ratio": 0.20, "focus": "巩固记忆"},
+        {"name": "课后思考", "ratio": 0.10, "focus": "延伸思考"}
+      ]
+    },
+    "实验演示": {
+      "description": "科学实验展示结构",
+      "scenes": [
+        {"name": "实验目的", "ratio": 0.10, "focus": "明确目标"},
+        {"name": "材料准备", "ratio": 0.15, "focus": "介绍器材"},
+        {"name": "实验步骤", "ratio": 0.40, "focus": "过程演示"},
+        {"name": "结果分析", "ratio": 0.20, "focus": "数据解读"},
+        {"name": "结论总结", "ratio": 0.15, "focus": "归纳结论"}
+      ]
+    },
+    "历史叙事": {
+      "description": "历史事件讲述结构",
+      "scenes": [
+        {"name": "时代背景", "ratio": 0.15, "focus": "历史环境"},
+        {"name": "事件经过", "ratio": 0.40, "focus": "详细过程"},
+        {"name": "人物刻画", "ratio": 0.20, "focus": "关键人物"},
+        {"name": "历史意义", "ratio": 0.15, "focus": "影响分析"},
+        {"name": "现实启示", "ratio": 0.10, "focus": "当代价值"}
+      ]
+    }
+  },
+  
+  "output": {
+    "workspace": "./teaching_output",
+    "formats": ["mp4", "gif", "png_sequence"],
+    "naming_convention": "{subject}_{topic}_{timestamp}",
+    "save_metadata": true,
+    "save_prompts": true
+  },
+  
+  "quality": {
+    "auto_enhance": true,
+    "check_educational_accuracy": true,
+    "validate_prompts": true
+  },
+  
+  "features": {
+    "batch_generation": true,
+    "template_library": true,
+    "version_control": true,
+    "export_formats": ["json", "markdown", "pdf"]
+  }
+}
