@@ -1,0 +1,85 @@
+{
+  "description": "抽象概念具象化器 - 风格模板库",
+  "version": "1.0.0",
+  "last_updated": "2026-04-13",
+  
+  "styles": {
+    "cartoon": {
+      "name": "卡通风格",
+      "name_en": "Cartoon Style",
+      "description": "适合课堂教学，亲切可爱",
+      "prompt_suffix": "cartoon style, friendly and cute, bright colors, simple shapes, educational illustration",
+      "color_palette": ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7"],
+      "use_cases": ["课堂导入", "PPT课件", "学生笔记"],
+      "example_concepts": ["指针", "GPIO", "中断"]
+    },
+    
+    "tech": {
+      "name": "科技风格",
+      "name_en": "Tech Style",
+      "description": "适合技术文档，专业现代",
+      "prompt_suffix": "modern tech style, blue and white color scheme, clean lines, professional diagram, futuristic",
+      "color_palette": ["#0066CC", "#00AAFF", "#003366", "#FFFFFF", "#F0F8FF"],
+      "use_cases": ["技术文档", "开发指南", "API文档"],
+      "example_concepts": ["I2C", "SPI", "DMA"]
+    },
+    
+    "handdrawn": {
+      "name": "手绘风格",
+      "name_en": "Hand-drawn Style",
+      "description": "适合笔记课件，自然亲切",
+      "prompt_suffix": "hand-drawn style, sketch-like, pencil drawing, natural and approachable, notebook illustration",
+      "color_palette": ["#333333", "#666666", "#999999", "#F5F5DC", "#FFFACD"],
+      "use_cases": ["学生笔记", "手写课件", "复习资料"],
+      "example_concepts": ["PWM", "内存管理", "进程"]
+    },
+    
+    "comic": {
+      "name": "漫画风格",
+      "name_en": "Comic Style",
+      "description": "适合社交传播，生动有趣",
+      "prompt_suffix": "comic book style, dynamic action, speech bubbles, expressive characters, fun storytelling",
+      "color_palette": ["#FF4757", "#2ED573", "#1E90FF", "#FFA502", "#A55EEA"],
+      "use_cases": ["社交媒体", "科普文章", "趣味教学"],
+      "example_concepts": ["死锁", "内存泄漏", "竞态条件"]
+    },
+    
+    "minimalist": {
+      "name": "极简风格",
+      "name_en": "Minimalist Style",
+      "description": "适合快速理解，清晰直观",
+      "prompt_suffix": "minimalist style, simple shapes, limited colors, clean design, easy to understand",
+      "color_palette": ["#000000", "#FFFFFF", "#666666", "#CCCCCC", "#EEEEEE"],
+      "use_cases": ["快速参考", "复习卡片", "考试要点"],
+      "example_concepts": ["所有概念"]
+    }
+  },
+  
+  "style_selection_guide": {
+    "课堂教学": {
+      "recommended": ["cartoon", "handdrawn"],
+      "reason": "亲切友好，学生易于接受"
+    },
+    "技术文档": {
+      "recommended": ["tech", "minimalist"],
+      "reason": "专业严谨，清晰准确"
+    },
+    "社交媒体": {
+      "recommended": ["comic", "cartoon"],
+      "reason": "生动有趣，吸引眼球"
+    },
+    "考试复习": {
+      "recommended": ["minimalist", "handdrawn"],
+      "reason": "简洁清晰，便于记忆"
+    }
+  },
+  
+  "custom_style_template": {
+    "name": "",
+    "name_en": "",
+    "description": "",
+    "prompt_suffix": "",
+    "color_palette": [],
+    "use_cases": []
+  }
+}

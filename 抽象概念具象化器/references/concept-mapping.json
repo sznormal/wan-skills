@@ -1,0 +1,217 @@
+{
+  "description": "抽象概念具象化器 - 概念映射库",
+  "version": "1.0.0",
+  "last_updated": "2026-04-13",
+  
+  "categories": {
+    "data_structure": {
+      "name": "数据结构",
+      "description": "数据存储和访问相关概念"
+    },
+    "hardware": {
+      "name": "硬件接口",
+      "description": "芯片引脚和外设接口"
+    },
+    "communication": {
+      "name": "通信协议",
+      "description": "设备间通信协议"
+    },
+    "control": {
+      "name": "控制流程",
+      "description": "程序控制逻辑"
+    },
+    "error": {
+      "name": "错误类型",
+      "description": "常见编程错误"
+    },
+    "os": {
+      "name": "操作系统",
+      "description": "操作系统核心概念"
+    },
+    "ros": {
+      "name": "机器人系统",
+      "description": "ROS框架概念"
+    }
+  },
+  
+  "mappings": [
+    {
+      "concept": "指针",
+      "category": "data_structure",
+      "metaphor": "导航APP",
+      "alternative_metaphors": ["门牌号", "地址簿", "路线图"],
+      "description": "指针存储的是地址，就像导航APP告诉你目的地位置",
+      "key_points": [
+        "指针存储的是地址，不是值",
+        "解引用 = 到达目的地",
+        "空指针 = 导航到虚无"
+      ],
+      "common_mistakes": [
+        "混淆指针和指针指向的值",
+        "忘记初始化指针",
+        "野指针访问"
+      ]
+    },
+    {
+      "concept": "GPIO",
+      "category": "hardware",
+      "metaphor": "水龙头",
+      "alternative_metaphors": ["开关", "门", "阀门"],
+      "description": "GPIO控制输入输出，就像水龙头控制水流",
+      "key_points": [
+        "GPIO可以配置为输入或输出",
+        "输出模式控制外设",
+        "输入模式读取传感器"
+      ],
+      "common_mistakes": [
+        "忘记配置引脚方向",
+        "电平配置错误",
+        "未考虑驱动能力"
+      ]
+    },
+    {
+      "concept": "中断",
+      "category": "control",
+      "metaphor": "门铃",
+      "alternative_metaphors": ["紧急电话", "警报器"],
+      "description": "中断打断当前工作，处理紧急事件后返回",
+      "key_points": [
+        "中断有优先级",
+        "ISR要简短快速",
+        "保存和恢复上下文"
+      ],
+      "common_mistakes": [
+        "ISR中做耗时操作",
+        "忘记清除中断标志",
+        "中断嵌套处理不当"
+      ]
+    },
+    {
+      "concept": "I2C",
+      "category": "communication",
+      "metaphor": "邮件系统",
+      "alternative_metaphors": ["班级通知", "广播站"],
+      "description": "I2C是主从通信，像邮件系统一样按地址收发",
+      "key_points": [
+        "两线制：SDA和SCL",
+        "每个设备有唯一地址",
+        "主从模式通信"
+      ],
+      "common_mistakes": [
+        "地址配置冲突",
+        "上拉电阻缺失",
+        "时钟速率不匹配"
+      ]
+    },
+    {
+      "concept": "SPI",
+      "category": "communication",
+      "metaphor": "高速公路",
+      "alternative_metaphors": ["多车道马路", "传送带"],
+      "description": "SPI是高速并行通信，像多车道高速公路",
+      "key_points": [
+        "四线制全双工",
+        "高速传输",
+        "支持多从机"
+      ],
+      "common_mistakes": [
+        "时钟极性配置错误",
+        "片选管理不当",
+        "速率过高导致错误"
+      ]
+    },
+    {
+      "concept": "PWM",
+      "category": "control",
+      "metaphor": "调光灯",
+      "alternative_metaphors": ["水龙头开度", "音量旋钮"],
+      "description": "PWM通过占空比控制功率，像调光灯旋钮",
+      "key_points": [
+        "占空比决定平均功率",
+        "频率影响响应速度",
+        "可用于电机控制、LED调光"
+      ],
+      "common_mistakes": [
+        "频率选择不当",
+        "占空比计算错误",
+        "负载驱动能力不足"
+      ]
+    },
+    {
+      "concept": "DMA",
+      "category": "hardware",
+      "metaphor": "快递员",
+      "alternative_metaphors": ["搬运工", "助理"],
+      "description": "DMA后台搬运数据，像快递员送货",
+      "key_points": [
+        "解放CPU，提高效率",
+        "需要配置源和目的地址",
+        "传输完成有中断通知"
+      ],
+      "common_mistakes": [
+        "缓冲区地址对齐问题",
+        "传输长度配置错误",
+        "未等待传输完成"
+      ]
+    },
+    {
+      "concept": "栈溢出",
+      "category": "error",
+      "metaphor": "杯子溢水",
+      "alternative_metaphors": ["箱子装满", "电梯超载"],
+      "description": "栈空间不足，像杯子倒水溢出",
+      "key_points": [
+        "栈空间有限",
+        "递归深度过大",
+        "局部变量占用太多"
+      ],
+      "common_mistakes": [
+        "递归无终止条件",
+        "大数组定义在栈上",
+        "忘记栈大小限制"
+      ]
+    },
+    {
+      "concept": "内存泄漏",
+      "category": "error",
+      "metaphor": "水池漏水",
+      "alternative_metaphors": ["钱包漏钱", "气球漏气"],
+      "description": "内存只申请不释放，像水池慢慢漏水",
+      "key_points": [
+        "申请后要释放",
+        "指针丢失导致无法释放",
+        "长期运行必须检查"
+      ],
+      "common_mistakes": [
+        "malloc后忘记free",
+        "指针覆盖导致内存丢失",
+        "异常分支未释放"
+      ]
+    },
+    {
+      "concept": "死锁",
+      "category": "error",
+      "metaphor": "互相等门",
+      "alternative_metaphors": ["交通堵塞", "排队等位"],
+      "description": "死锁是互相等待，像两个人互相等对方开门",
+      "key_points": [
+        "互斥资源竞争",
+        "循环等待条件",
+        "需要破坏死锁条件"
+      ],
+      "common_mistakes": [
+        "锁的获取顺序不一致",
+        "忘记释放锁",
+        "锁的粒度过大"
+      ]
+    }
+  ],
+  
+  "metaphor_rules": {
+    "data_structure": "使用容器、位置、导航类比喻",
+    "hardware": "使用开关、阀门、工具类比喻",
+    "communication": "使用交通、物流、通信类比喻",
+    "control": "使用日常生活流程、事件类比喻",
+    "error": "使用意外、损失、冲突类比喻"
+  }
+}
